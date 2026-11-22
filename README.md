@@ -1,7 +1,7 @@
 # CyberLab Explorer
 
 <div align="center">
-  <img src="./public/logo-kit/cyberlab-logo-horizontal.svg" alt="CyberLab Explorer" width="560" />
+  <img src="./public/logo-kit/cyberlab-logo-horizontal-white-1200.png" alt="CyberLab Explorer" width="600" />
   <br />
   <strong>Understand Every Attack. Master Every Defense.</strong>
   <br /><br />
