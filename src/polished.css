@@ -1,0 +1,508 @@
+:root {
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #294760 #091522;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 238px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 20;
+}
+
+.main {
+  min-width: 0;
+  width: calc(100% - 238px);
+}
+
+.main header {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  height: 68px;
+  padding: 0 32px;
+  background: rgba(7, 17, 31, 0.94);
+  backdrop-filter: blur(16px);
+}
+
+.header-actions {
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.crumb {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 36px 38px 64px;
+}
+
+.nav-item,
+.btn,
+.filter,
+.toggle,
+.option,
+.roadmap-row,
+.explorer-item,
+.attack-card,
+.lab-card,
+.defense-card,
+.check-row,
+.activity-row {
+  transition: border-color 180ms ease, background-color 180ms ease,
+    color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.nav-item:focus-visible,
+.btn:focus-visible,
+.filter:focus-visible,
+.toggle:focus-visible,
+.option:focus-visible,
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #40d9ff;
+  outline-offset: 2px;
+}
+
+.hero {
+  min-height: 300px;
+}
+
+.hero h1 {
+  max-width: 760px;
+  letter-spacing: -2.4px;
+}
+
+.hero p,
+.page-intro p,
+.module-head p {
+  max-width: 620px;
+}
+
+.stats-grid,
+.attack-grid,
+.lower-grid,
+.lab-grid,
+.defense-grid,
+.learning-stats,
+.learning-summary,
+.progress-columns,
+.module-bottom,
+.code-grid,
+.quiz-list,
+.achievement-grid {
+  align-items: stretch;
+}
+
+.attack-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.web-attack-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.attack-card,
+.lab-card,
+.defense-card,
+.explorer-item,
+.panel,
+.code-panel,
+.quiz-card,
+.roadmap {
+  border-radius: 8px;
+}
+
+.attack-card {
+  min-width: 0;
+}
+
+.attack-card p,
+.lab-card p,
+.defense-card p {
+  min-height: 48px;
+}
+
+.filter-row,
+.category-pills {
+  flex-wrap: wrap;
+  overflow: visible;
+}
+
+.filter-row button,
+.category-pills button,
+.filter-select {
+  white-space: nowrap;
+}
+
+.sim-panel {
+  border-radius: 10px;
+}
+
+.sim-toolbar {
+  min-height: 56px;
+  height: auto;
+}
+
+.sim-body {
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.75fr);
+}
+
+.visual-stage,
+.sim-inspector {
+  min-width: 0;
+}
+
+.timeline {
+  overflow-x: auto;
+}
+
+.timeline-steps {
+  min-width: 360px;
+}
+
+.node-row {
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.packet-stream {
+  min-width: 42px;
+}
+
+.module-bottom,
+.code-grid,
+.progress-columns {
+  min-width: 0;
+}
+
+.code-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.code-grid > div,
+.quiz-card,
+.activity-panel,
+.achievements-panel {
+  min-width: 0;
+}
+
+.learning-stats {
+  grid-template-columns: 1.4fr repeat(3, minmax(120px, 1fr));
+}
+
+.learning-summary {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.roadmap-row {
+  grid-template-columns: 38px minmax(180px, 1fr) 112px 18px;
+}
+
+.profile {
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand {
+  min-width: 0;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex: none;
+  border: 0;
+  box-shadow: none;
+  border-radius: 8px;
+  background: #0b1220;
+}
+
+.brand-wordmark {
+  display: block;
+  width: 138px;
+  max-width: calc(100% - 48px);
+  height: 30px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+@media (max-width: 1180px) {
+  .sidebar {
+    width: 218px;
+  }
+
+  .main {
+    width: calc(100% - 218px);
+  }
+
+  .content {
+    padding-inline: 28px;
+  }
+
+  .attack-grid,
+  .web-attack-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .header-actions .top-search,
+  .header-actions .streak {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    left: -238px;
+    width: 238px;
+    transition: left 220ms cubic-bezier(.2,.75,.25,1);
+  }
+
+  .sidebar.open {
+    left: 0;
+    box-shadow: 18px 0 50px rgba(1, 8, 16, 0.48);
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  .main header {
+    height: 64px;
+    padding-inline: 18px;
+  }
+
+  .menu-btn {
+    display: grid;
+  }
+
+  .header-user-copy {
+    display: none;
+  }
+
+  .content {
+    padding: 28px 20px 48px;
+  }
+
+  .hero {
+    min-height: 0;
+  }
+
+  .hero-orbit {
+    width: 230px;
+    margin-right: 0;
+  }
+
+  .attack-grid,
+  .web-attack-grid,
+  .lab-grid,
+  .defense-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sim-body,
+  .module-bottom,
+  .lower-grid,
+  .progress-columns,
+  .code-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sim-inspector {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .learning-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .learning-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .main header {
+    height: 58px;
+  }
+
+  .crumb {
+    font-size: 9px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .content {
+    padding: 22px 14px 40px;
+  }
+
+  .hero {
+    padding: 10px 0 26px;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 10vw, 38px);
+    letter-spacing: -1.7px;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .hero-orbit {
+    width: 100%;
+    height: 190px;
+    margin: 24px auto 0;
+    transform: scale(.82);
+  }
+
+  .stats-grid,
+  .attack-grid,
+  .web-attack-grid,
+  .lab-grid,
+  .defense-grid,
+  .learning-stats,
+  .learning-summary,
+  .quiz-list,
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    border-right: 0;
+  }
+
+  .page-intro {
+    align-items: flex-start;
+  }
+
+  .page-intro h1,
+  .module-head h1 {
+    font-size: 29px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .filter-row,
+  .category-pills {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+
+  .sim-toolbar {
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .sim-controls {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .speed-control {
+    width: 100%;
+  }
+
+  .timeline {
+    padding-inline: 10px;
+  }
+
+  .visual-stage {
+    padding: 16px 8px;
+  }
+
+  .node-row {
+    transform: none;
+    margin: 28px 0;
+  }
+
+  .node {
+    width: 72px;
+  }
+
+  .packet-stream {
+    min-width: 24px;
+  }
+
+  .metric-row {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .mock-app {
+    max-width: 280px;
+  }
+
+  .generic-flow {
+    flex-wrap: wrap;
+  }
+
+  .roadmap-row {
+    grid-template-columns: 32px minmax(0, 1fr) 82px 18px;
+  }
+
+  .roadmap-row i {
+    display: block;
+    margin: 5px 0 0;
+  }
+
+  .activity-row {
+    grid-template-columns: 24px minmax(0, 1fr) auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
